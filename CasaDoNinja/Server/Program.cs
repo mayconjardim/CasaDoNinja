@@ -1,5 +1,4 @@
-using Microsoft.AspNetCore.ResponseCompression;
-
+global using CasaDoNinja.Shared;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
