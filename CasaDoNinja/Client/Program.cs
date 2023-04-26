@@ -1,3 +1,4 @@
+global using CasaDoNinja.Shared;
 using CasaDoNinja.Client;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
