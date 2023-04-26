@@ -23,5 +23,21 @@ namespace CasaDoNinja.Server.Controllers
 
         }
 
+        [HttpGet("{productId}")]
+        public async Task<ActionResult<ServiceResponse<Product>>> GetProductById(int productId)
+        {
+
+            var result = await _productService.GetProductByIdAsync(productId);
+            
+            if (result.Data == null)
+            {
+                result.Success = false;
+                return NotFound(result);
+            }
+
+            return Ok(result);
+
+        }
+
     }
 }

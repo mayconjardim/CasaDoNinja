@@ -19,5 +19,15 @@
 
             return response;
         }
+
+        public async Task<ServiceResponse<Product>> GetProductByIdAsync(int productId)
+        {
+            var response = new ServiceResponse<Product>
+            {
+                Data = await _context.Products.FirstOrDefaultAsync(p => p.Id == productId)
+            };
+
+            return response;
+        }
     }
 }
