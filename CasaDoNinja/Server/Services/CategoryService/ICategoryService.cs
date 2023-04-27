@@ -4,7 +4,6 @@
     {
 
         Task<ServiceResponse<List<Category>>> GetCategoriesAsync();
-
-
+        
     }
 }

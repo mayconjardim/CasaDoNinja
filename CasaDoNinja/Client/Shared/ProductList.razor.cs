@@ -4,13 +4,16 @@
      partial class ProductList
     {
 
-        private static List<Product> Products = new List<Product>();
-
-        protected override async Task OnInitializedAsync()
+        protected override void OnInitialized()
         {
-            await ProductService.GetProducts();
+            ProductService.ProductsChanged += StateHasChanged;
          
         }
 
+        public void Dispose()
+        {
+            ProductService.ProductsChanged -= StateHasChanged;
+
+        }
     }
 }

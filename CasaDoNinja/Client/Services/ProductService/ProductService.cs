@@ -5,6 +5,8 @@ namespace CasaDoNinja.Client.Services.ProductService
     {
         private readonly HttpClient _http;
 
+        public event Action ProductsChanged;
+
         public ProductService(HttpClient http)
         {
             _http = http;
@@ -12,13 +14,16 @@ namespace CasaDoNinja.Client.Services.ProductService
 
         public List<Product> Products { get; set; } = new List<Product>();
 
-        public async Task GetProducts()
+        public async Task GetProducts(string? categoryUrl = null)
         {
-            var result = await _http.GetFromJsonAsync<ServiceResponse<List<Product>>>("api/products");
+            var result = categoryUrl == null ?
+                await _http.GetFromJsonAsync<ServiceResponse<List<Product>>>("api/products") :
+                await _http.GetFromJsonAsync<ServiceResponse<List<Product>>>($"api/products/category/{categoryUrl}");
             if (result != null && result.Data != null)
             { 
                 Products = result.Data;
             }
+            ProductsChanged.Invoke();
         }
 
         public async Task<ServiceResponse<Product>> GetProductById(int productId)
@@ -26,5 +31,7 @@ namespace CasaDoNinja.Client.Services.ProductService
             var result = await _http.GetFromJsonAsync<ServiceResponse<Product>>($"api/products/{productId}");
             return result;
         }
+
+      
     }
 }
