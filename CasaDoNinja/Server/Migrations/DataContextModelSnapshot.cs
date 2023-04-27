@@ -58,13 +58,13 @@ namespace CasaDoNinja.Server.Migrations
                         {
                             Id = 3,
                             Name = "Bandanas",
-                            Url = "Bandanas"
+                            Url = "bandanas"
                         },
                         new
                         {
                             Id = 4,
                             Name = "Acessórios",
-                            Url = "acessorios "
+                            Url = "acessorios"
                         });
                 });
 
@@ -87,9 +87,6 @@ namespace CasaDoNinja.Server.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -107,7 +104,6 @@ namespace CasaDoNinja.Server.Migrations
                             CategoryId = 2,
                             Description = "Kit Naruto - Ideal para presente Produtos com acabamento impecável. Acompanha: 2 Kunais, 2 Mini Kunais + Papéis Ninja.",
                             ImageUrl = "https://m.media-amazon.com/images/I/41qDrvk-x9S._AC_.jpg",
-                            Price = 42.00m,
                             Title = "Kit Kunais Naruto e Boruto"
                         },
                         new
@@ -116,7 +112,6 @@ namespace CasaDoNinja.Server.Migrations
                             CategoryId = 3,
                             Description = "Bandana Naruto Aldeia da Folha - Ideal para presente. - Acabamento Premium. - Material de alta qualidade. - Medidas reais do anime.",
                             ImageUrl = "https://m.media-amazon.com/images/I/61Cp0y6w+ML._AC_SL1500_.jpg",
-                            Price = 29.90m,
                             Title = "Bandana do Itachi"
                         },
                         new
@@ -125,7 +120,6 @@ namespace CasaDoNinja.Server.Migrations
                             CategoryId = 1,
                             Description = "Fabricado com lâmina de aço 440 polido, sem fio corte.Detalhes em ferro fundido e empunhadeira em tecido e madeira!",
                             ImageUrl = "https://m.media-amazon.com/images/I/31rstniHY0S._AC_.jpg",
-                            Price = 346.99m,
                             Title = "Espada Ichigo Tensa Zangetsu Samurai"
                         },
                         new
@@ -134,7 +128,6 @@ namespace CasaDoNinja.Server.Migrations
                             CategoryId = 1,
                             Description = "A lâmina da espada matadora de demônios de madeira é feita de madeira de bambu, ambientalmente segura e resistente",
                             ImageUrl = "https://m.media-amazon.com/images/I/41MH+y74JCL._AC_.jpg",
-                            Price = 29.99m,
                             Title = "Espada Demon Slayer Katana"
                         },
                         new
@@ -143,7 +136,6 @@ namespace CasaDoNinja.Server.Migrations
                             CategoryId = 3,
                             Description = "Bandana de metal maleável Comprimento Total 96 cm Tecido ajustável de poliéster e algodão Tamanho da Placa 10 cm x 4 cm",
                             ImageUrl = "https://m.media-amazon.com/images/I/31rstniHY0S._AC_.jpg",
-                            Price = 346.99m,
                             Title = "Bandana Aldeia da Areia (Ninja Renegado)"
                         },
                         new
@@ -152,7 +144,6 @@ namespace CasaDoNinja.Server.Migrations
                             CategoryId = 4,
                             Description = "Material do pingente: polimetilmetacrilato. Tamanho do pingente: 6,8 cm x 2,4 cm. Estes brincos de Hanafuda do caçador de demônios",
                             ImageUrl = "https://m.media-amazon.com/images/I/31x9ejbKLOS._AC_.jpg",
-                            Price = 346.99m,
                             Title = "Brincos Tanjiro Hanafuda HappyShip"
                         },
                         new
@@ -161,7 +152,6 @@ namespace CasaDoNinja.Server.Migrations
                             CategoryId = 4,
                             Description = " Brincos de acrílico Brincos para mulheres e Homens",
                             ImageUrl = "https://m.media-amazon.com/images/I/51fz2BdE4TL._AC_SL1500_.jpg",
-                            Price = 346.99m,
                             Title = "Brincos Tokyo Revengers"
                         },
                         new
@@ -170,7 +160,6 @@ namespace CasaDoNinja.Server.Migrations
                             CategoryId = 2,
                             Description = "As Kunais são feitas em plástico emborrachado de alta qualidade, com pontas maleáveis e flexíveis.",
                             ImageUrl = "https://m.media-amazon.com/images/I/31ZNd5yHKrS._AC_.jpg",
-                            Price = 46.99m,
                             Title = "Kit Kunais  - Kunai Minato + Kunai Ponta Dupla"
                         },
                         new
@@ -179,7 +168,6 @@ namespace CasaDoNinja.Server.Migrations
                             CategoryId = 1,
                             Description = "Skyward Blade é uma espada de 5 estrelas na série Genshin Impact Mondstadt",
                             ImageUrl = "https://m.media-amazon.com/images/I/51p4L0DdNHL._AC_SL1500_.jpg",
-                            Price = 540.99m,
                             Title = "Espada Hengqiyuan Genshin Impact Foam"
                         },
                         new
@@ -188,7 +176,6 @@ namespace CasaDoNinja.Server.Migrations
                             CategoryId = 2,
                             Description = "O kunai de plástico tem cerca de 25 cm de comprimento e é feito de plástico ABS, que é durável para usar",
                             ImageUrl = "https://m.media-amazon.com/images/I/51Stsw0MneL._AC_SL1080_.jpg",
-                            Price = 6.99m,
                             Title = "Kunai Japonês Big Kunai"
                         },
                         new
@@ -197,8 +184,218 @@ namespace CasaDoNinja.Server.Migrations
                             CategoryId = 1,
                             Description = "Aparência, lâmina de madeira e cabo são todos feitos de acordo com a animação original, com alta precisão e detalhes",
                             ImageUrl = "https://m.media-amazon.com/images/I/61ScbA0VN0L._AC_SL1500_.jpg",
-                            Price = 460.00m,
                             Title = "Espada Demon Slayer Katana com Bainha de Couro "
+                        });
+                });
+
+            modelBuilder.Entity("CasaDoNinja.Shared.ProductType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ProductTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Default"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Metal"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Ferro"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Ouro"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Plastico"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "Magico"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "Demoniaco"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "Vampirico"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Name = "Bambu"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Name = "3D"
+                        });
+                });
+
+            modelBuilder.Entity("CasaDoNinja.Shared.ProductVariant", b =>
+                {
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("OriginalPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("ProductId", "ProductTypeId");
+
+                    b.HasIndex("ProductTypeId");
+
+                    b.ToTable("ProductVariants");
+
+                    b.HasData(
+                        new
+                        {
+                            ProductId = 1,
+                            ProductTypeId = 2,
+                            OriginalPrice = 19.99m,
+                            Price = 9.99m
+                        },
+                        new
+                        {
+                            ProductId = 1,
+                            ProductTypeId = 3,
+                            OriginalPrice = 0m,
+                            Price = 7.99m
+                        },
+                        new
+                        {
+                            ProductId = 1,
+                            ProductTypeId = 4,
+                            OriginalPrice = 29.99m,
+                            Price = 19.99m
+                        },
+                        new
+                        {
+                            ProductId = 2,
+                            ProductTypeId = 2,
+                            OriginalPrice = 14.99m,
+                            Price = 7.99m
+                        },
+                        new
+                        {
+                            ProductId = 3,
+                            ProductTypeId = 2,
+                            OriginalPrice = 0m,
+                            Price = 6.99m
+                        },
+                        new
+                        {
+                            ProductId = 4,
+                            ProductTypeId = 5,
+                            OriginalPrice = 0m,
+                            Price = 3.99m
+                        },
+                        new
+                        {
+                            ProductId = 4,
+                            ProductTypeId = 6,
+                            OriginalPrice = 0m,
+                            Price = 9.99m
+                        },
+                        new
+                        {
+                            ProductId = 4,
+                            ProductTypeId = 7,
+                            OriginalPrice = 0m,
+                            Price = 19.99m
+                        },
+                        new
+                        {
+                            ProductId = 5,
+                            ProductTypeId = 5,
+                            OriginalPrice = 0m,
+                            Price = 3.99m
+                        },
+                        new
+                        {
+                            ProductId = 6,
+                            ProductTypeId = 5,
+                            OriginalPrice = 0m,
+                            Price = 2.99m
+                        },
+                        new
+                        {
+                            ProductId = 7,
+                            ProductTypeId = 8,
+                            OriginalPrice = 29.99m,
+                            Price = 19.99m
+                        },
+                        new
+                        {
+                            ProductId = 7,
+                            ProductTypeId = 9,
+                            OriginalPrice = 0m,
+                            Price = 69.99m
+                        },
+                        new
+                        {
+                            ProductId = 7,
+                            ProductTypeId = 10,
+                            OriginalPrice = 59.99m,
+                            Price = 49.99m
+                        },
+                        new
+                        {
+                            ProductId = 8,
+                            ProductTypeId = 8,
+                            OriginalPrice = 24.99m,
+                            Price = 9.99m
+                        },
+                        new
+                        {
+                            ProductId = 9,
+                            ProductTypeId = 8,
+                            OriginalPrice = 0m,
+                            Price = 14.99m
+                        },
+                        new
+                        {
+                            ProductId = 10,
+                            ProductTypeId = 1,
+                            OriginalPrice = 299m,
+                            Price = 159.99m
+                        },
+                        new
+                        {
+                            ProductId = 11,
+                            ProductTypeId = 1,
+                            OriginalPrice = 399m,
+                            Price = 79.99m
                         });
                 });
 
@@ -211,6 +408,30 @@ namespace CasaDoNinja.Server.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("CasaDoNinja.Shared.ProductVariant", b =>
+                {
+                    b.HasOne("CasaDoNinja.Shared.Product", "Product")
+                        .WithMany("Variants")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CasaDoNinja.Shared.ProductType", "ProductType")
+                        .WithMany()
+                        .HasForeignKey("ProductTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("ProductType");
+                });
+
+            modelBuilder.Entity("CasaDoNinja.Shared.Product", b =>
+                {
+                    b.Navigation("Variants");
                 });
 #pragma warning restore 612, 618
         }

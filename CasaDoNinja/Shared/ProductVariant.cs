@@ -13,8 +13,6 @@ namespace CasaDoNinja.Shared
         [JsonIgnore]
         public Product Product { get; set; }
         public int ProductId { get; set; }
-
-        [JsonIgnore]
         public ProductType ProductType { get; set; }
         public int ProductTypeId { get; set; }
 
