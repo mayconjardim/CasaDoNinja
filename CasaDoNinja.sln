@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasaDoNinja.Server", "CasaDoNinja\Server\CasaDoNinja.Server.csproj", "{F3474179-F11A-4D69-BAAE-F5DAEFCECB3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CasaDoNinja.Server", "CasaDoNinja\Server\CasaDoNinja.Server.csproj", "{F3474179-F11A-4D69-BAAE-F5DAEFCECB3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasaDoNinja.Client", "CasaDoNinja\Client\CasaDoNinja.Client.csproj", "{9281CF4F-D052-484A-93B6-E6E7854DE8A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CasaDoNinja.Client", "CasaDoNinja\Client\CasaDoNinja.Client.csproj", "{9281CF4F-D052-484A-93B6-E6E7854DE8A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasaDoNinja.Shared", "CasaDoNinja\Shared\CasaDoNinja.Shared.csproj", "{E380A566-4058-40BB-9A14-7B6C1C183A7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CasaDoNinja.Shared", "CasaDoNinja\Shared\CasaDoNinja.Shared.csproj", "{E380A566-4058-40BB-9A14-7B6C1C183A7D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
