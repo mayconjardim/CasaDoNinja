@@ -1,8 +1,4 @@
-﻿
-
-using System.Net.Http.Json;
-
-namespace CasaDoNinja.Client.Shared
+﻿namespace CasaDoNinja.Client.Shared
 {
 
      partial class ProductList
@@ -12,11 +8,8 @@ namespace CasaDoNinja.Client.Shared
 
         protected override async Task OnInitializedAsync()
         {
-            var result = await Http.GetFromJsonAsync<ServiceResponse<List<Product>>>("api/products");
-            if (result != null && result.Data != null)
-            {
-                Products = result.Data;
-            }
+            await ProductService.GetProducts();
+         
         }
 
     }
