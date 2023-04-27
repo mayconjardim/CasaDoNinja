@@ -2,6 +2,7 @@ global using CasaDoNinja.Shared;
 global using Microsoft.EntityFrameworkCore;
 global using CasaDoNinja.Server.Data;
 global using CasaDoNinja.Server.Services.ProductService;
+global using CasaDoNinja.Server.Services.CategoryService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +17,8 @@ builder.Services.AddRazorPages();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IProductService, ProductService>(); 
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 var app = builder.Build();
 
