@@ -28,13 +28,7 @@ namespace CasaDoNinja.Server.Controllers
         {
 
             var result = await _productService.GetProductByIdAsync(productId);
-            
-            if (result.Data == null)
-            {
-                result.Success = false;
-                return NotFound(result);
-            }
-
+          
             return Ok(result);
 
         }

@@ -22,10 +22,18 @@
 
         public async Task<ServiceResponse<Product>> GetProductByIdAsync(int productId)
         {
-            var response = new ServiceResponse<Product>
+
+            var response = new ServiceResponse<Product>();
+            var product = await _context.Products.FindAsync(productId);
+            if (product == null)
             {
-                Data = await _context.Products.FirstOrDefaultAsync(p => p.Id == productId)
-            };
+                response.Success = false;
+                response.Message = $"O Produto com o Id {productId} não existe!";
+            }
+            else
+            {
+                response.Data = product;
+            }
 
             return response;
         }
