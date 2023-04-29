@@ -18,6 +18,7 @@ namespace CasaDoNinja.Client.Services.CartService
             List<CartItem>? cart = await Cart();
             cart.Add(cartItem);
             await _localStorage.SetItemAsync("cart", cart);
+            OnChange?.Invoke();
         }
 
      
