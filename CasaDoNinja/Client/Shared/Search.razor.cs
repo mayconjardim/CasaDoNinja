@@ -21,7 +21,7 @@ namespace CasaDoNinja.Client.Shared
 
         public void SearchProducts()
         {
-            NavigationManager.NavigateTo($"search/{searchText}");
+            NavigationManager.NavigateTo($"search/{searchText}/1");
         }
 
         public async Task HandleSearch(KeyboardEventArgs args)

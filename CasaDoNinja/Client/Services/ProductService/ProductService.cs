@@ -1,5 +1,6 @@
 ﻿
 using CasaDoNinja.Shared;
+using CasaDoNinja.Shared.Dtos;
 
 namespace CasaDoNinja.Client.Services.ProductService
 {
@@ -16,6 +17,10 @@ namespace CasaDoNinja.Client.Services.ProductService
 
         public List<Product> Products { get; set; } = new List<Product>();
         public string Message { get; set; } = "Carregando Produtos";
+        public int CurrentPage { get; set; } = 1;
+        public int PageCount { get; set; } = 0;
+        public string LastSearchText { get; set; } = string.Empty;
+
 
         public async Task GetProducts(string? categoryUrl = null)
         {
@@ -26,6 +31,14 @@ namespace CasaDoNinja.Client.Services.ProductService
             { 
                 Products = result.Data;
             }
+            CurrentPage = 1;
+            PageCount = 0;
+
+            if (Products.Count == 0)
+            {
+                Message = "Nenhum produto encontrado!";
+            }
+
             ProductsChanged.Invoke();
         }
 
@@ -35,13 +48,15 @@ namespace CasaDoNinja.Client.Services.ProductService
             return result;
         }
 
-        public async Task SeachProducts(string searchText)
+        public async Task SeachProducts(string searchText, int page)
         {
-
-            var result = await _http.GetFromJsonAsync<ServiceResponse<List<Product>>>($"api/products/search/{searchText}");
+            LastSearchText = searchText;
+            var result = await _http.GetFromJsonAsync<ServiceResponse<ProductSearchDto>>($"api/products/search/{searchText}/{page}");
             if (result != null && result.Data != null)
             {
-                Products = result.Data;
+                Products = result.Data.Products;
+                CurrentPage = result.Data.CurrentPage;
+                PageCount = result.Data.Pages;
             }
             if(Products.Count == 0)
             {
