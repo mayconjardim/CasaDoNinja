@@ -2,6 +2,7 @@ global using CasaDoNinja.Shared;
 global using System.Net.Http.Json;
 global using CasaDoNinja.Client.Services.ProductService;
 global using CasaDoNinja.Client.Services.CategoryService;
+global using CasaDoNinja.Client.Services.CartService;
 
 using CasaDoNinja.Client;
 using Microsoft.AspNetCore.Components.Web;
@@ -17,6 +18,8 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<ICartService, CartService>();
+
 
 
 await builder.Build().RunAsync();
