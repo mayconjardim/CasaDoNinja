@@ -60,7 +60,7 @@
                       Description = "Kit Naruto - Ideal para presente Produtos" +
                   " com acabamento impecável. Acompanha: 2 Kunais, 2 Mini Kunais + Papéis Ninja.",
                       ImageUrl = "https://m.media-amazon.com/images/I/41qDrvk-x9S._AC_.jpg",
-
+                      Featured = true,
                       CategoryId = 2
                   },
                  new Product
@@ -70,6 +70,7 @@
                      Description = "Bandana Naruto Aldeia da Folha - Ideal para presente. - Acabamento Premium. - Material de alta qualidade. " +
                      "- Medidas reais do anime.",
                      ImageUrl = "https://m.media-amazon.com/images/I/61Cp0y6w+ML._AC_SL1500_.jpg",
+                     Featured = true,
                      CategoryId = 3
                  },
                  new Product
@@ -79,6 +80,7 @@
                      Description = "Fabricado com lâmina de aço 440 polido, sem fio corte." +
                         "Detalhes em ferro fundido e empunhadeira em tecido e madeira!",
                      ImageUrl = "https://m.media-amazon.com/images/I/31rstniHY0S._AC_.jpg",
+                     Featured = true,
                      CategoryId = 1
                  },
 
@@ -91,7 +93,7 @@
                        Title = "Espada Demon Slayer Katana",
                        Description = "A lâmina da espada matadora de demônios de madeira é feita de madeira de bambu, " +
                        "ambientalmente segura e resistente",
-                       ImageUrl = "https://m.media-amazon.com/images/I/41MH+y74JCL._AC_.jpg",
+                       ImageUrl = "https://m.media-amazon.com/images/I/41E68ZGUdcL._AC_SX569_.jpg",
                        CategoryId = 1
                    },
 
@@ -103,7 +105,7 @@
                     Title = "Bandana Aldeia da Areia (Ninja Renegado)",
                     Description = "Bandana de metal maleável Comprimento Total 96 cm Tecido ajustável de poliéster e algodão " +
                     "Tamanho da Placa 10 cm x 4 cm",
-                    ImageUrl = "https://m.media-amazon.com/images/I/31rstniHY0S._AC_.jpg",
+                    ImageUrl = "https://m.media-amazon.com/images/I/41MH+y74JCL._AC_.jpg",
                     CategoryId = 3
                 },
                 new Product
