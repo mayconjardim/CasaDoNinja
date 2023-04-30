@@ -1,4 +1,5 @@
 global using CasaDoNinja.Shared;
+global using CasaDoNinja.Shared.Dtos;
 global using System.Net.Http.Json;
 global using CasaDoNinja.Client.Services.ProductService;
 global using CasaDoNinja.Client.Services.CategoryService;
