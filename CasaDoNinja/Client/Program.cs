@@ -4,6 +4,7 @@ global using System.Net.Http.Json;
 global using CasaDoNinja.Client.Services.ProductService;
 global using CasaDoNinja.Client.Services.CategoryService;
 global using CasaDoNinja.Client.Services.CartService;
+global using CasaDoNinja.Client.Services.AuthService;
 
 using CasaDoNinja.Client;
 using Microsoft.AspNetCore.Components.Web;
@@ -20,6 +21,8 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+
 
 
 
