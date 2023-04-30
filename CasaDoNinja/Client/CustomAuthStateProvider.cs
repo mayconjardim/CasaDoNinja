@@ -31,7 +31,7 @@ namespace CasaDoNinja.Client
                 { 
                     identity = new ClaimsIdentity(ParseClaimsFromJwt(authToken), "jwt");
                     _http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue
-                        ("Bearer ", authToken.Replace("\"",""));
+                        ("Bearer", authToken.Replace("\"",""));
                 } 
                 catch (Exception ex) 
                 {

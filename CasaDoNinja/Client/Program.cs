@@ -5,6 +5,8 @@ global using CasaDoNinja.Client.Services.ProductService;
 global using CasaDoNinja.Client.Services.CategoryService;
 global using CasaDoNinja.Client.Services.CartService;
 global using CasaDoNinja.Client.Services.AuthService;
+global using Microsoft.AspNetCore.Components.Authorization;
+
 
 using CasaDoNinja.Client;
 using Microsoft.AspNetCore.Components.Web;
@@ -22,7 +24,9 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
-
+builder.Services.AddOptions();
+builder.Services.AddAuthorizationCore();
+builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthStateProvider>();
 
 
 
