@@ -4,6 +4,7 @@ global using CasaDoNinja.Server.Data;
 global using CasaDoNinja.Server.Services.ProductService;
 global using CasaDoNinja.Server.Services.CategoryService;
 global using CasaDoNinja.Server.Services.CartService;
+global using CasaDoNinja.Server.Services.AuthService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IProductService, ProductService>(); 
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+
 
 
 var app = builder.Build();
