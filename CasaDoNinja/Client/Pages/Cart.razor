@@ -1,5 +1,8 @@
 ﻿@page "/cart"
 @inject ICartService CartService
+@inject IAuthService AuthService
+@inject NavigationManager NavigationManager
+
 
 <PageTitle>Carrinho de compras</PageTitle>
 
@@ -27,7 +30,7 @@ else
                    min="1" />
                     <button class="btn-delete" @onclick="@(() =>
                         RemoveProductFromCart(product.ProductId, product.ProductTypeId))">
-                        Remover
+                        Delete
                     </button>
                 </div>
                 <div class="cart-product-price">$@(product.Price * product.Quantity)</div>
@@ -37,6 +40,7 @@ else
             Total (@cartProducts.Count): $@cartProducts.Sum(product => @product.Price * product.Quantity)
         </div>
     </div>
+
 }
 
 
@@ -44,6 +48,7 @@ else
 @code {
     List<CartProductDto> cartProducts = null;
     string message = "Carregando carrinho...";
+    bool isAuthenticated = false;
 
     protected override async Task OnInitializedAsync()
     {
@@ -58,14 +63,11 @@ else
 
     private async Task LoadCart()
     {
-        if ((await CartService.GetCartItems()).Count == 0)
+        await CartService.GetCartItemsCount();
+        cartProducts = await CartService.GetCartProducts();
+        if (cartProducts == null || cartProducts.Count == 0)
         {
-            message = "Seu carrinho está vazio.";
-            cartProducts = new List<CartProductDto>();
-        }
-        else
-        {
-            cartProducts = await CartService.GetCartProducts();
+            message = "Seu carrinho esta vazio.";
         }
     }
 
@@ -76,4 +78,6 @@ else
             product.Quantity = 1;
         await CartService.UpdateQuantity(product);
     }
+
+    
 }
